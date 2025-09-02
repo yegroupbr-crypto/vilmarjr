@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer className="text-center text-slate-400 font-medium">
-      <p className="text-xs">© {year} Junior Gualbertto - Consultoria Imobiliária</p>
+      <p className="text-xs">© {year} Vitor Jr.</p>
     </footer>
   );
 }

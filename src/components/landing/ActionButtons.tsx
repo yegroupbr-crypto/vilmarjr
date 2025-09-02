@@ -4,11 +4,11 @@ import { MessageCircle, Instagram, Globe } from 'lucide-react';
 
 export default function ActionButtons() {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5561998166292', '_blank');
+    window.open('https://wa.me/559881654298', '_blank');
   };
 
   const handleInstagramClick = () => {
-    window.open('https://instagram.com/juniorgualbertto_', '_blank');
+    window.open('https://instagram.com/seu_instagram_aqui', '_blank');
   };
 
   const handleWebsiteClick = () => {
@@ -25,7 +25,7 @@ export default function ActionButtons() {
           <MessageCircle size={24} className="group-hover:scale-110 transition-transform duration-300" />
           <div className="text-left">
             <div className="text-lg font-bold">WhatsApp</div>
-            <div className="text-sm opacity-90 font-medium">+55 61 99816-6292</div>
+            <div className="text-sm opacity-90 font-medium">+55 98 8165-4298</div>
           </div>
         </div>
         <div className="w-2 h-2 bg-white/30 rounded-full group-hover:bg-white/50 transition-colors duration-300"></div>
@@ -39,7 +39,7 @@ export default function ActionButtons() {
           <Instagram size={24} className="group-hover:scale-110 transition-transform duration-300" />
           <div className="text-left">
             <div className="text-lg font-bold">Instagram</div>
-            <div className="text-sm opacity-90 font-medium">@juniorgualbertto_</div>
+            <div className="text-sm opacity-90 font-medium">@seu_instagram_aqui</div>
           </div>
         </div>
         <div className="w-2 h-2 bg-white/30 rounded-full group-hover:bg-white/50 transition-colors duration-300"></div>

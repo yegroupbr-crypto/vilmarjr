@@ -10,7 +10,9 @@ interface ContactInfoProps {
 
 export default function ContactInfo({ officeLocation, city, phone }: ContactInfoProps) {
   const handleMapClick = () => {
-    window.open(`https://maps.google.com/?q=${officeLocation}+${city}`, '_blank');
+    if (city) {
+      window.open(`https://maps.google.com/?q=${officeLocation}+${city}`, '_blank');
+    }
   };
 
   return (
@@ -21,7 +23,8 @@ export default function ContactInfo({ officeLocation, city, phone }: ContactInfo
       
       <button
         onClick={handleMapClick}
-        className="group w-full text-left p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-start gap-4 mb-6 border border-white/10 hover:border-white/20 transform hover:scale-[1.01]"
+        disabled={!city}
+        className="group w-full text-left p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-start gap-4 mb-6 border border-white/10 hover:border-white/20 transform hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl">
           <MapPin size={20} className="text-white" />
@@ -32,9 +35,11 @@ export default function ContactInfo({ officeLocation, city, phone }: ContactInfo
             {officeLocation}<br />
             {city}
           </div>
-          <div className="text-xs text-amber-400 mt-2 font-semibold group-hover:text-amber-300 transition-colors">
-            Ver no mapa →
-          </div>
+          {city && (
+            <div className="text-xs text-amber-400 mt-2 font-semibold group-hover:text-amber-300 transition-colors">
+              Ver no mapa →
+            </div>
+          )}
         </div>
       </button>
 

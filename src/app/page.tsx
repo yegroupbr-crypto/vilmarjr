@@ -4,35 +4,20 @@ import React from 'react';
 import ProfileSection from '@/components/landing/ProfileSection';
 import ActionButtons from '@/components/landing/ActionButtons';
 import ContactInfo from '@/components/landing/ContactInfo';
-import ServicesSection from '@/components/landing/ServicesSection';
-import CtaSection from '@/components/landing/CtaSection';
 import Footer from '@/components/landing/Footer';
 
 export default function Home() {
   const profileData = {
-    name: 'Junior Gualbertto',
+    name: 'Vilmar Jr.',
     initials: 'JG',
-    title: 'Consultor especializado em financiamento de imóveis',
-    description: 'Especialista em encontrar as melhores condições para você conquistar seu imóvel dos sonhos.',
+    title: 'Descrição do seu negócio',
+    description: 'Descrição referente a empresa, serviço, e negócio.',
   };
 
   const contactData = {
-    officeLocation: 'Conect Towers QS 01, sala 639',
-    city: 'Águas Claras - Brasília/DF',
-    phone: '+55 61 99816-6292',
-  };
-
-  const services = [
-    { name: 'Financiamento habitacional', colorFrom: 'from-blue-400', colorTo: 'to-blue-600' },
-    { name: 'Refinanciamento de imóveis', colorFrom: 'from-amber-400', colorTo: 'to-amber-600' },
-    { name: 'Consultoria financeira personalizada', colorFrom: 'from-purple-400', colorTo: 'to-purple-600' },
-    { name: 'Análise de crédito imobiliário', colorFrom: 'from-emerald-400', colorTo: 'to-emerald-600' },
-  ];
-
-  const ctaData = {
-    title: 'Pronto para realizar seu sonho?',
-    description: 'Entre em contato e descubra as melhores opções de financiamento para você',
-    buttonText: 'Consulta Gratuita',
+    officeLocation: 'Indisponível no momento',
+    city: '',
+    phone: '+55 98 8165-4298',
   };
 
   return (
@@ -46,8 +31,6 @@ export default function Home() {
         <ProfileSection {...profileData} />
         <ActionButtons />
         <ContactInfo {...contactData} />
-        <ServicesSection services={services} />
-        <CtaSection {...ctaData} />
         <Footer />
       </main>
     </div>

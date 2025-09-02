@@ -8,7 +8,7 @@ import Footer from '@/components/landing/Footer';
 
 export default function Home() {
   const profileData = {
-    name: 'Vilmar Jr.',
+    name: 'Vilmar Jr. (ou nome da sua empresa)',
     initials: 'JG',
     title: 'Descrição do seu negócio',
     description: 'Descrição referente a empresa, serviço, e negócio.',

@@ -9,7 +9,7 @@ interface ProfileSectionProps {
 
 export default function ProfileSection({ name, initials, title, description }: ProfileSectionProps) {
   return (
-    <div className="text-center mb-16">
+    <div className="text-center mb-12">
       <div className="relative inline-block mb-10">
         <div className="w-32 h-32 bg-gradient-to-br from-blue-800 via-slate-800 to-amber-800 rounded-2xl flex items-center justify-center shadow-2xl border border-white/10 backdrop-blur-sm">
           <span className="text-4xl font-black text-white tracking-tight">{initials}</span>

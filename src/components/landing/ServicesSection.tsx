@@ -1,11 +1,14 @@
-export default function ServicesSection() {
-  const services = [
-    { name: 'Financiamento habitacional', colorFrom: 'from-blue-400', colorTo: 'to-blue-600' },
-    { name: 'Refinanciamento de imóveis', colorFrom: 'from-amber-400', colorTo: 'to-amber-600' },
-    { name: 'Consultoria financeira personalizada', colorFrom: 'from-purple-400', colorTo: 'to-purple-600' },
-    { name: 'Análise de crédito imobiliário', colorFrom: 'from-emerald-400', colorTo: 'to-emerald-600' },
-  ];
+interface Service {
+  name: string;
+  colorFrom: string;
+  colorTo: string;
+}
 
+interface ServicesSectionProps {
+  services: Service[];
+}
+
+export default function ServicesSection({ services }: ServicesSectionProps) {
   return (
     <div className="bg-white/5 backdrop-blur-xl rounded-2xl shadow-xl p-8 mb-12 border border-white/10">
       <h3 className="text-xl font-black text-white mb-8 text-center">

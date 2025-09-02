@@ -2,7 +2,13 @@
 
 import { Award, MessageCircle } from 'lucide-react';
 
-export default function CtaSection() {
+interface CtaSectionProps {
+  title: string;
+  description: string;
+  buttonText: string;
+}
+
+export default function CtaSection({ title, description, buttonText }: CtaSectionProps) {
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/5561998166292', '_blank');
   };
@@ -15,16 +21,16 @@ export default function CtaSection() {
         </div>
       </div>
       <h3 className="text-xl font-black mb-4 text-white">
-        Pronto para realizar seu sonho?
+        {title}
       </h3>
       <p className="text-amber-100 font-medium mb-8 leading-relaxed text-sm">
-        Entre em contato e descubra as melhores opções de financiamento para você
+        {description}
       </p>
       <button
         onClick={handleWhatsAppClick}
         className="group bg-white hover:bg-slate-50 text-amber-800 font-bold py-4 px-8 rounded-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-amber-200/20"
       >
-        <span className="text-base">Consulta Gratuita</span>
+        <span className="text-base">{buttonText}</span>
         <MessageCircle size={18} className="inline ml-2 group-hover:scale-110 transition-transform duration-300" />
       </button>
     </div>

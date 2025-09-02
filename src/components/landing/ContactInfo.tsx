@@ -2,9 +2,15 @@
 
 import { MapPin, Phone } from 'lucide-react';
 
-export default function ContactInfo() {
+interface ContactInfoProps {
+  officeLocation: string;
+  city: string;
+  phone: string;
+}
+
+export default function ContactInfo({ officeLocation, city, phone }: ContactInfoProps) {
   const handleMapClick = () => {
-    window.open('https://maps.google.com/?q=Conect+Towers+QS+01,+sala+639+Águas+Claras+Brasília+DF', '_blank');
+    window.open(`https://maps.google.com/?q=${officeLocation}+${city}`, '_blank');
   };
 
   return (
@@ -23,8 +29,8 @@ export default function ContactInfo() {
         <div className="flex-1">
           <div className="font-bold text-white text-base mb-1">Escritório</div>
           <div className="text-slate-300 font-medium text-sm leading-relaxed">
-            Conect Towers QS 01, sala 639<br />
-            Águas Claras - Brasília/DF
+            {officeLocation}<br />
+            {city}
           </div>
           <div className="text-xs text-amber-400 mt-2 font-semibold group-hover:text-amber-300 transition-colors">
             Ver no mapa →
@@ -38,7 +44,7 @@ export default function ContactInfo() {
         </div>
         <div>
           <div className="font-bold text-white text-base">Telefone</div>
-          <div className="text-slate-300 font-medium text-sm">+55 61 99816-6292</div>
+          <div className="text-slate-300 font-medium text-sm">{phone}</div>
         </div>
       </div>
     </div>

@@ -24,6 +24,7 @@ export function PersonalizedTestimonial({ input }: PersonalizedTestimonialProps)
         const result = await getTestimonialAction(input);
         setTestimonial(result);
       } catch (e) {
+        console.error(e);
         toast({
           title: 'Erro de IA',
           description: 'Falha ao carregar o depoimento personalizado.',
@@ -39,10 +40,10 @@ export function PersonalizedTestimonial({ input }: PersonalizedTestimonialProps)
   }, [input, toast]);
 
   return (
-    <Card className="bg-card/80 backdrop-blur-sm border-border/50 animate-fade-in-up shadow-lg">
+    <Card className="bg-card/80 backdrop-blur-sm border-border/20 shadow-lg">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-lg font-headline">
-          <MessageSquareQuote className="text-accent" />
+        <CardTitle className="flex items-center gap-2 text-lg">
+          <MessageSquareQuote className="text-primary" />
           Depoimento em Destaque
         </CardTitle>
       </CardHeader>

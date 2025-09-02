@@ -1,9 +1,11 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Instagram, MapPin, Globe } from 'lucide-react';
-import { PersonalizedTestimonial } from '@/components/personalized-testimonial';
+'use client';
+
 import type { PersonalizedTestimonialInput } from '@/ai/flows/personalized-testimonial-display';
+import { PersonalizedTestimonial } from '@/components/personalized-testimonial';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Globe, Instagram, MapPin, Phone } from 'lucide-react';
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -32,31 +34,33 @@ export default function Home() {
     'https://www.google.com/maps/search/?api=1&query=Conect+Towers+QS+01+sala+639+Águas+Claras+Brasília+DF';
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 lg:p-8 font-body">
-      <div className="w-full max-w-md mx-auto space-y-6 animate-fade-in">
-        <Card className="overflow-hidden shadow-xl border-none bg-card/80 backdrop-blur-sm">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 lg:p-8">
+      <div className="w-full max-w-md mx-auto space-y-6">
+        <Card className="overflow-hidden shadow-xl border-border/20 bg-card/80 backdrop-blur-sm">
           <CardContent className="p-6 text-center flex flex-col items-center">
-            <Avatar className="w-24 h-24 mb-4 border-4 border-accent">
+            <Avatar className="w-24 h-24 mb-4 border-4 border-primary">
               <AvatarImage
                 src="https://picsum.photos/200/200"
                 alt="Junior Gualbertto"
                 data-ai-hint="professional man"
-                width={200}
-                height={200}
               />
               <AvatarFallback>JG</AvatarFallback>
             </Avatar>
-            <h1 className="text-2xl font-bold font-headline text-foreground">
+            <h1 className="text-2xl font-bold text-foreground">
               Junior Gualbertto
             </h1>
-            <p className="text-accent font-medium">
+            <p className="text-muted-foreground font-medium">
               Consultor especializado em financiamento de imóveis
             </p>
           </CardContent>
         </Card>
 
         <div className="space-y-3">
-          <Button asChild className="w-full h-14 text-base font-semibold" size="lg">
+          <Button
+            asChild
+            className="w-full h-14 text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90"
+            size="lg"
+          >
             <a
               href="https://wa.me/5561998166292"
               target="_blank"
@@ -76,13 +80,23 @@ export default function Home() {
               Siga-me no Instagram
             </a>
           </Button>
-          <Button asChild className="w-full h-14 text-base font-semibold" size="lg">
+          <Button
+            asChild
+            variant="secondary"
+            className="w-full h-14 text-base font-semibold"
+            size="lg"
+          >
             <a href={gmapsUrl} target="_blank" rel="noopener noreferrer">
               <MapPin className="w-6 h-6" />
               Visite meu escritório
             </a>
           </Button>
-          <Button disabled className="w-full h-14 text-base font-semibold" size="lg">
+          <Button
+            disabled
+            variant="secondary"
+            className="w-full h-14 text-base font-semibold"
+            size="lg"
+          >
             <Globe className="w-6 h-6" />
             Website (em breve)
           </Button>

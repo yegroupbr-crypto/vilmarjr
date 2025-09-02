@@ -8,7 +8,7 @@ export default function ActionButtons() {
   };
 
   const handleInstagramClick = () => {
-    window.open('https://instagram.com/seu_instagram_aqui', '_blank');
+    alert('Instagram em breve!');
   };
 
   const handleWebsiteClick = () => {
@@ -39,7 +39,7 @@ export default function ActionButtons() {
           <Instagram size={24} className="group-hover:scale-110 transition-transform duration-300" />
           <div className="text-left">
             <div className="text-lg font-bold">Instagram</div>
-            <div className="text-sm opacity-90 font-medium">@seu_instagram_aqui</div>
+            <div className="text-sm opacity-90 font-medium">Em breve</div>
           </div>
         </div>
         <div className="w-2 h-2 bg-white/30 rounded-full group-hover:bg-white/50 transition-colors duration-300"></div>
@@ -52,7 +52,7 @@ export default function ActionButtons() {
         <div className="flex items-center gap-4">
           <Globe size={24} className="group-hover:scale-110 transition-transform duration-300" />
           <div className="text-left">
-            <div className="text-lg font-bold">Website</div>
+            <div className="text-lg font-bold">Site</div>
             <div className="text-sm opacity-90 font-medium">Em breve</div>
           </div>
         </div>

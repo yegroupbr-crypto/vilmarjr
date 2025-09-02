@@ -1,4 +1,5 @@
 import { Briefcase } from 'lucide-react';
+import Image from 'next/image';
 
 interface ProfileSectionProps {
   name: string;
@@ -11,8 +12,14 @@ export default function ProfileSection({ name, initials, title, description }: P
   return (
     <div className="text-center mb-12">
       <div className="relative inline-block mb-10">
-        <div className="w-32 h-32 bg-gradient-to-br from-blue-800 via-slate-800 to-amber-800 rounded-2xl flex items-center justify-center shadow-2xl border border-white/10 backdrop-blur-sm">
-          <span className="text-4xl font-black text-white tracking-tight">{initials}</span>
+        <div className="w-32 h-32 bg-gradient-to-br from-blue-800 via-slate-800 to-amber-800 rounded-2xl flex items-center justify-center shadow-2xl border border-white/10 backdrop-blur-sm overflow-hidden">
+          <Image 
+            src="https://i.ibb.co/GNT6m3s/VilmarJr.jpg"
+            alt={name}
+            width={128}
+            height={128}
+            className="object-cover"
+          />
         </div>
         <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl border-2 border-slate-900 flex items-center justify-center">
           <div className="w-3 h-3 bg-white rounded-full"></div>

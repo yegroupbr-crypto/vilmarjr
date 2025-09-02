@@ -11,7 +11,7 @@ interface ContactInfoProps {
 export default function ContactInfo({ officeLocation, city, phone }: ContactInfoProps) {
   const handleMapClick = () => {
     if (city) {
-      window.open(`https://maps.google.com/?q=${officeLocation}+${city}`, '_blank');
+      window.open(`https://maps.google.com/?q=${encodeURIComponent(officeLocation)}+${encodeURIComponent(city)}`, '_blank');
     }
   };
 
@@ -24,13 +24,13 @@ export default function ContactInfo({ officeLocation, city, phone }: ContactInfo
       <button
         onClick={handleMapClick}
         disabled={!city}
-        className="group w-full text-left p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-start gap-4 mb-6 border border-white/10 hover:border-white/20 transform hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed"
+        className="group w-full text-left p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-start gap-4 mb-6 border border-white/10 hover:border-white/20 transform hover:scale-[1.01] disabled:cursor-not-allowed"
       >
         <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl">
           <MapPin size={20} className="text-white" />
         </div>
         <div className="flex-1">
-          <div className="font-bold text-white text-base mb-1">Escritório</div>
+          <div className="font-bold text-white text-base mb-1">Endereço</div>
           <div className="text-slate-300 font-medium text-sm leading-relaxed">
             {officeLocation}<br />
             {city}
